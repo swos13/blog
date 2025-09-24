@@ -14,6 +14,7 @@ likeHandler.post(async (req, res) => {
     if(!checkFields(data, ['postId'])) return res.status(400).json({ message: "Required field missing"});
 
     try {
+        //make sure it's correct post and user
         const like = await prisma.like.create({
             data: {
                 postId: data.postId,
