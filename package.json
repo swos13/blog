@@ -39,7 +39,7 @@
     "eslint-config-next": "15.5.3",
     "jsonwebtoken": "^9.0.2",
     "multer": "^2.0.2",
-    "next-connect": "^1.0.0",
+    "next-connect": "0.12.2",
     "prisma": "^6.16.2",
     "react-error-boundary": "^6.0.0",
     "react-toastify": "^11.0.5",
