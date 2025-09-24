@@ -43,7 +43,7 @@ const registerHandler: NextApiHandlerWithCookie = async (req, res) => {
     })
 
     //generate ID token based on user's ID
-    const idToken = await jwt.sign(
+    const idToken = jwt.sign(
         {userId: newUser.id },
         process.env.ID_TOKEN_SECRET,
         {
@@ -52,7 +52,7 @@ const registerHandler: NextApiHandlerWithCookie = async (req, res) => {
     )
 
     //generate access token based on user's ID
-    const accessToken = await jwt.sign(
+    const accessToken = jwt.sign(
         {userId: newUser.id},
         process.env.ACCESS_TOKEN_SECRET,
         {
