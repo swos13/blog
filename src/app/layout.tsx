@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "@/utils/wdyr";
+import createEmotionCache from "@/utils/createEmotionCache";
+import createEmotionServer from "@emotion/server/create-instance";
+import EmotionProvider from "@/providers/emotionProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,8 +28,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="emotion-insertion-point" content="" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <EmotionProvider>{children}</EmotionProvider>
       </body>
     </html>
   );
