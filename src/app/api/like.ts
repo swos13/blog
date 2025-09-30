@@ -8,6 +8,7 @@ import nc from 'next-connect';
 
 const likeHandler = nc<NextApiRequestWithUserId, NextApiResponse>();
 
+
 likeHandler.post(async (req, res) => {
     const data = JSON.parse(req.body) as Pick<Like, 'postId'>
 

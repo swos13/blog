@@ -1,8 +1,8 @@
-'use client';
+"use client";
 import { useTheme } from "@mui/material/styles";
 import { PageLinks } from "../Header";
 import { List, ListItem } from "@mui/material";
-import Link from "next/link";
+import ActiveLink from "../ActiveLink";
 
 type DesktopMenuProps = {
   links: PageLinks;
@@ -19,8 +19,8 @@ export default function DesktopMenu({ links }: DesktopMenuProps) {
         paddingInline: theme.spacing(1),
       }}>
       {links.map((link, index) => (
-        <ListItem key={index}>
-          <Link href={link.href}>{link.title}</Link>
+        <ListItem key={index} sx={{ width: "fit-content"}}>
+          <ActiveLink href={link.href}>{link.title}</ActiveLink>
         </ListItem>
       ))}
     </List>

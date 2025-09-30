@@ -2,8 +2,8 @@
 import { Box, Drawer, List, ListItem, ListItemButton, useTheme } from "@mui/material";
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import Link from "next/link";
 import { PageLinks } from "../Header";
+import ActiveLink from "../ActiveLink";
 
 type MobileMenuProps = {
   links: PageLinks;
@@ -28,7 +28,7 @@ export default function MobileMenu({ links }: MobileMenuProps) {
         <List sx={{ minWidth: "128px" }}>
           {links.map((link, index) => (
             <ListItem key={index} onClick={closeMenu} sx={{ justifyContent: "center" }}>
-              <Link href={link.href}>{link.title}</Link>
+              <ActiveLink href={link.href}>{link.title}</ActiveLink>
             </ListItem>
           ))}
         </List>
